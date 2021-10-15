@@ -1,4 +1,4 @@
-package com.objectiva.demo;
+package com.objectiva.function;
 
 /**
  * @author Willis Bai

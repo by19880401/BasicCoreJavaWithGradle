@@ -1,6 +1,7 @@
-package com.objectiva.demo;
+package com.objectiva.function;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.function.Function;
 
@@ -20,7 +21,8 @@ public class Main {
 
     public static void main(String[] args) {
         List<PersonBean> requestDataList = initList();
-        NewBatchProcessor<PersonBean, PersonBean> batchProcessor = new NewBatchProcessor<>(requestDataList, createRequestProcessor);
+        List<String> supposeList = Arrays.asList("1", "2");
+        NewBatchProcessor<PersonBean, PersonBean> batchProcessor = new NewBatchProcessor<>(requestDataList, createRequestProcessor, supposeList);
         batchProcessor.process();
     }
 
