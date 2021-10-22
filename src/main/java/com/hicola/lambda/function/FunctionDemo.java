@@ -8,7 +8,7 @@ import java.util.function.Function;
  * @author Willis Bai
  * @title: FunctionDemo
  * @projectName BasicCoreJavaWithGradle
- * @description: TODO
+ * @description: p -> p.getId() + "," + p.getName() equals to new Function<People, Integer>(){Integer result = p.getId() + p.getAge(); return result;}
  * @date 10/12/20214:57 PM
  */
 public class FunctionDemo {
@@ -16,13 +16,13 @@ public class FunctionDemo {
     public static void main(String[] args) {
         List<People> peopleList = initList();
         // sample 1:
-        /*for (People people : peopleList) {
+        /* for (People people : peopleList) {
             System.out.println(people.show(p -> p.getId() + "," + p.getName()));
         }*/
 
-        // sample 2: 构造一个function函数，
-        // Function<T,R>, T是函数参数，R是结果
-        // 即，传入一个People对象，返回一个Integer类型结果
+        // sample 2: Construct a function method，
+        // Function<T,R>, T is the parameters，R is the returned value
+        // that means here transmit a people object, return an Integer object
         Function<People, Integer> peopleFunction = p -> {
             Integer result = p.getId() + p.getAge();
             return result;// 此处返回结果，即R

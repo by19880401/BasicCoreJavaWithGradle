@@ -17,18 +17,15 @@ import java.util.function.Function;
 public class NewBatchProcessor<T, U> {
     private Collection<T> requestDataCollection;
     private Function<T, U> requestProcessor;
-    private List<String> targetList;
 
-    public NewBatchProcessor(Collection<T> requestDataCollection, Function<T, U> requestProcessor, List<String> objList) {
+    public NewBatchProcessor(Collection<T> requestDataCollection, Function<T, U> requestProcessor) {
         this.requestDataCollection = requestDataCollection;
         this.requestProcessor = requestProcessor;
-        this.targetList = objList;
     }
 
     public List<U> process() {
         List<U> successList = new ArrayList<>();
         this.requestDataCollection.stream().forEach(requestData -> {
-            StaticLog.info("targetList:{}",targetList);
             U responseObj = this.requestProcessor.apply(requestData);
             successList.add(responseObj);
         });

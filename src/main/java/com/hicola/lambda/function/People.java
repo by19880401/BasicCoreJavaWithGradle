@@ -48,7 +48,11 @@ public class People {
      * @return
      */
     public Integer show(Function<People, Integer> function) {
-        return function.apply(this);// R apply(T t)
+        /**
+         * R apply(T t)
+         * R is the result (return) value, and T is the parameters
+         */
+        return function.apply(this);
     }
 
 }

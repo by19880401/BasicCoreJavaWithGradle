@@ -1,5 +1,10 @@
 package com.objectiva.function;
 
+import lombok.ToString;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author Willis Bai
  * @title: PersonBean
@@ -10,6 +15,7 @@ package com.objectiva.function;
 public class PersonBean {
     private int personID;
     private String name;
+    private List<String> sList = new ArrayList<>();
 
     public int getPersonID() {
         return personID;
@@ -27,11 +33,20 @@ public class PersonBean {
         this.name = name;
     }
 
+    public List<String> getsList() {
+        return sList;
+    }
+
+    public void setsList(List<String> sList) {
+        this.sList = sList;
+    }
+
     @Override
     public String toString() {
         return "PersonBean{" +
                 "personID=" + personID +
                 ", name='" + name + '\'' +
+                ", sList=" + sList +
                 '}';
     }
 }

@@ -1,5 +1,7 @@
 package com.objectiva.function;
 
+import cn.hutool.log.StaticLog;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -22,7 +24,10 @@ public class Main {
     public static void main(String[] args) {
         List<PersonBean> requestDataList = initList();
         List<String> supposeList = Arrays.asList("1", "2");
-        NewBatchProcessor<PersonBean, PersonBean> batchProcessor = new NewBatchProcessor<>(requestDataList, createRequestProcessor, supposeList);
+        requestDataList.stream().forEach(rd->{
+            rd.setsList(supposeList);
+        });
+        NewBatchProcessor<PersonBean, PersonBean> batchProcessor = new NewBatchProcessor<>(requestDataList, createRequestProcessor);
         batchProcessor.process();
     }
 

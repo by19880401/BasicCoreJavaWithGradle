@@ -12,7 +12,7 @@ import java.util.Optional;
  * @author Willis Bai
  * @title: OptionalDemo
  * @projectName BasicCoreJavaWithGradle
- * @description: TODO
+ * @description: Optional is used to avoid NPE
  * @date 10/13/20211:14 PM
  */
 public class OptionalDemo {
