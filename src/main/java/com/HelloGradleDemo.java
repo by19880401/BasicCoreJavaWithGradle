@@ -9,6 +9,7 @@ package com;
  */
 public class HelloGradleDemo {
     public static void main(String[] args) {
+        // print a logs
         System.out.println("Hello Gradle, this is a demo project built by Gradle.");
     }
 }
